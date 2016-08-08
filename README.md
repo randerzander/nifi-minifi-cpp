@@ -20,9 +20,12 @@ MiNiFi is a child project effort of Apache NiFi.  This repository is for a nativ
 
 - [Features](#features)
 - [Caveats](#caveats)
-- [Requirements](#requirements)
 - [Getting Started](#getting-started)
-- [Getting Help](#getting-help)
+  - [System Requirements](#system-requirements)
+  - [Building](#building)
+  - [Cleaning](#cleaning)
+  - [Configuring](#configuring)
+  - [Running](#running)
 - [Documentation](#documentation)
 - [License](#license)
 
@@ -49,26 +52,26 @@ Perspectives of the role of MiNiFi should be from the perspective of the agent a
   * GenerateFlowFile
   * LogAttribute
 
-## System Requirements
-### To build
-#### Utilities
+## Getting Started
+### System Requirements
+#### To build
+##### Utilities
 * Make
 * GCC
   * 4.8.4 or greater
 * G++
   * 4.8.4 or greater
 
-#### Libraries / Development Headers
+##### Libraries / Development Headers
 * libboost and boost-devel
   * 1.23.0 or greater
 * libxml2 and libxml2-devel
 
-### To run
-#### Libraries
+#### To run
+##### Libraries
 * libxml2
 
-## Building
-
+### Building
 From your source checkout, perform `make` in the root of the directory where the Makefile is located.  For parallel building, the '-j' or '--jobs' option.  On an average development machine, a serial build takes approximately 90 seconds.
 
     # ~/Development/code/apache/nifi-minifi-cpp on git:master
@@ -83,7 +86,7 @@ From your source checkout, perform `make` in the root of the directory where the
     ...
 
 
-## Clean
+### Cleaning
 Generated files and artifacts can be removed by performing a `make clean`.
 
     # ~/Development/code/apache/nifi-minifi-cpp on git:master
@@ -97,7 +100,7 @@ Generated files and artifacts can be removed by performing a `make clean`.
     rm -f *.o libuuid.a
     find ./ -iname "*.o" -exec rm -f {} \;
 
-## Configuring
+### Configuring
 The 'conf' directory in the root contains a template flow.yml document.  This is compatible with the format used with the Java MiNiFi application.  Currently, a subset of the configuration is supported.  Additional information on the YAML format for the flow.yml can be found in the [MiNiFi System Administrator Guide](https://nifi.apache.org/minifi/system-admin-guide.html).
 
     Flow Controller:
@@ -139,12 +142,15 @@ The 'conf' directory in the root contains a template flow.yml document.  This is
                     Port: 10001
                     Host Name: localhost
 
-## Running
+### Running
 After completing a [build](#building), the application can be run by issuing:
 
-   $ ./target/minifi
+    $ ./target/minifi
 
-By default, this will make use of a flow.yml located in the conf directory.  This configuration file location can be altered by adjusting the property `nifi.flow.configuration.file` in minifi.properties located in the conf directory. 
+By default, this will make use of a flow.yml located in the conf directory.  This configuration file location can be altered by adjusting the property `nifi.flow.configuration.file` in minifi.properties located in the conf directory.
+
+## Documentation
+See http://nifi.apache.org/minifi for the latest documentation.
 
 ## License
 Except as otherwise noted this software is licensed under the
