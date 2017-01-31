@@ -48,7 +48,7 @@ endif()
 find_package(UUID REQUIRED)
 
 # Link against minifi, yaml-cpp, uuid, and leveldb
-target_link_libraries(minifiexe minifi yaml-cpp ${UUID_LIBRARIES} ${LEVELDB_LIBRARIES})
+target_link_libraries(minifiexe minifi yaml-cpp leveldb ${UUID_LIBRARIES} ${LEVELDB_LIBRARIES})
 set_target_properties(minifiexe
         PROPERTIES OUTPUT_NAME minifi)
 

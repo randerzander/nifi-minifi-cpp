@@ -53,6 +53,7 @@ find_package(Threads REQUIRED)
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
 add_subdirectory(thirdparty/yaml-cpp-yaml-cpp-0.5.3)
+add_subdirectory(thirdparty/leveldb-1.18)
 add_subdirectory(libminifi)
 add_subdirectory(main)
 
